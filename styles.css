@@ -1,10 +1,6 @@
-#wrapper {
-    background-color: #FCF8F3; 
-    width: 100%; 
-    margin: auto;
-    min-width: 800px;
-} 
-header {
-    background-color: #F9F1E7;
-    padding: 30px 10px;
+:root{
+    --green-color: #82BC24;
+    --light-green-color: #F3F8E9;
+    --blue-color: #1982C4;
+    --light-blue-color: #E8F3F9;
 }
