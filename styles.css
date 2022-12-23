@@ -43,6 +43,11 @@ body {
     border-radius: 50px;
 }
 
+.btn.green:hover {
+    color: var(--green-color);
+    background-color: #FFFFFF;
+}
+
 .btn.light.green {
     padding: 8px 32px;
     font-size: 14px;
@@ -112,6 +117,10 @@ nav ul{
     gap: 60px;
     list-style: none;
     margin: 0px;
+}
+
+nav ul li a:hover{
+    color: var(--green-color);
 }
 
 nav ul li a {
@@ -564,4 +573,256 @@ footer .copyright {
 
 footer ul li :hover{
     padding-left: 3px;
+}
+
+/* =============================== */
+
+/* Sign In PAGE */
+
+.signIn-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: var(--light-green-color);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signIn-wrapper .box {
+    position: relative;
+    width: 100%;
+    max-width: 1020px;
+    height: 640px;
+    background-color: white;
+    border-radius: 3.3rem;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.signIn-wrapper .inner-box {
+    position: absolute;
+    width: calc(100% - 4.1rem);
+    height: calc(100% - 4.1rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.signIn-wrapper .forms-wrap {
+    position: absolute;
+    height: 100%;
+    width: 45%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    transition: 0.08s ease-in-out;
+}
+
+.signIn-wrapper form {
+    max-width: 260px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    transition: opacity 0.02s 0.4s;
+}
+
+.signIn-wrapper form.sign-up-form {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.signIn-wrapper .logo {
+    display: flex;
+    align-items: center;
+}
+
+.signIn-wrapper .logo img {
+    width: 120px;
+    margin-right: 0.3rem;
+}
+
+.signIn-wrapper .logo h4 {
+    font-size: 1.1rem;
+    margin-top: -9px;
+    letter-spacing: -0.5px;
+    color: #000;
+}
+
+.signIn-wrapper .heading h2 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.signIn-wrapper .heading h6 {
+    color: rgb(121, 121, 121);
+    font-weight: 400;
+    font-size: 0.75rem;
+    display: inline;
+}
+
+.signIn-wrapper .toggle {
+    color: #000;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.signIn-wrapper .toggle:hover{
+    color: var(--green-color);
+}
+
+.signIn-wrapper .input-wrap {
+    position: relative;
+    height: 37px;
+    margin-bottom: 2rem;
+}
+
+.signIn-wrapper label {
+    position: absolute;
+    left: 10px;
+    font-size: 0.95rem;
+    color: rgb(121, 121, 121);
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.signIn-wrapper .input-field.active {
+    border-bottom-color: #000;
+}
+
+.signIn-wrapper .actual-form.input-wrap{
+    margin-top: 20px;
+}
+
+
+.signIn-wrapper .input-field{
+    font-family: "Rubik", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    top: 10px;
+    line-height: 200%;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    border-color: transparent;
+    padding: 0 25px;
+    height: 47px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.signIn-wrapper .btn.green{
+    display: inline-block;
+    height: 47px;
+}
+
+.signIn-wrapper .text {
+    margin-top: 30px;
+    color: rgb(121, 121, 121);
+    font-size: 0.7rem;
+}
+
+.signIn-wrapper .text a {
+    color: rgb(121, 121, 121);
+    transition: 0.3s;
+}
+
+.signIn-wrapper .text a:hover{
+    color: var(--green-color);
+    pointer-events: none;
+}
+
+.signIn-wrapper .sign-up-mode form.sign-up-form {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.signIn-wrapper .sign-up-mode .forms-wrap {
+    left: 55%;
+}
+
+.signIn-wrapper .sign-up-mode .carousel {
+    left: 0;
+}
+
+.signIn-wrapper .carousel {
+    position: absolute;
+    height: 100%;
+    width: 55%;
+    left: 45%;
+    top: 0;
+    background-color: var(--light-green-color);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 2rem;
+    display: grid;
+    grid-template-rows: auto 1fe;
+    padding-bottom: 2rem;
+    overflow: hidden;
+    transition: 0.8s ease-in-out;
+}
+
+.mySlides img{
+    margin-top: 20px;
+    width: 534px;
+    height: 554px;
+}
+
+.signIn-wrapper .images-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.signIn-wrapper .text-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.signIn-wrapper .text-wrap {
+    max-height: 2.2rem;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+}
+
+.signIn-wrapper .text-group {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transform: translateY(0);
+    transition: 0.5s;
+}
+
+.signIn-wrapper .text-group h2 {
+    line-height: 2.2rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.signIn-wrapper .bullets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signIn-wrapper .bullets span{
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #000;
+    margin: 0 0.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
 }
