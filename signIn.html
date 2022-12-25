@@ -14,7 +14,7 @@
         <div class="box">
             <div class="inner-box">
                 <div class="forms-wrap">
-                    <form action="signIn.html" autocomplete="off" class="sign-in-form">
+                    <form action="signIn.html" name="myForm" autocomplete="off" class="sign-in-form">
                         <div class="logo">
                             <a href="index.html"><img src="images/logo/black-logo.png" alt="logo"></a>
                         </div>
@@ -22,13 +22,12 @@
                         <div class="heading">
                             <h2>Welcome Back</h2>
                             <h6>Not Registred?</h6>
-                            <a href="#" class="toggle">Sign Up</a>
+                            <a href="signUp.html" class="toggle">Sign Up</a>
                         </div>
 
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <!-- <label>Name</label> <br> -->
-                                <input type="text"
+                                <input name="fname" type="text"
                                 minlength="4"
                                 class="input-field"
                                 autocomplete="off"
@@ -42,9 +41,8 @@
                                 autocomplete="off"
                                 placeholder="Enter your Password"
                                 required>
-                                <!-- <label>Password</label> -->
                             </div>
-                            <a class="btn green">Submit</a>
+                            <input class="btn green" type="submit" value="Submit" style="border: transparent; font-weight: 600;">
                             <p class="text">Forgot Password? 
                             <a href="#">Get Help</a> Signing In</p>
                         </div>
@@ -60,36 +58,6 @@
                             <h6>Alredy Have An Account?</h6>
                             <a href="#" class="toggle">Sign In</a>
                         </div>
-                        <div class="actual-form">
-                            <div class="input-wrap">
-                                <input type="text"
-                                minlength="4"
-                                class="input-field"
-                                autocomplete="off"
-                                required>
-                                <label>Name</label>
-                            </div>
-                            <div class="input-wrap">
-                                <input type="email"
-                                class="input-field"
-                                autocomplete="off"
-                                required>
-                                <label>Email</label>
-                            </div>
-                            <div class="input-wrap">
-                                <input type="password"
-                                minlength="4"
-                                class="input-fiels"
-                                autocomplete="off"
-                                required>
-                                <label>Password</label>
-                            </div>
-                            <a class="btn green">Sign Up</a>
-                            <p class="text">By Signing Up, I agree to the
-                                <a href="#">Terms and Conditions</a> and
-                                <a href="#">Privacy and Policy</a>
-                            </p>
-                        </div>
                     </form>
                 </div>
 
@@ -104,22 +72,6 @@
                       <img src="images/signIn_register/img3.png" class="image img-3" alt="">
                     </div>
                   </div>
-
-                <!-- <div class="text-slider">
-                    <div class="text-wrap">
-                        <div class="text-group">
-                            <h2>Safest Crypto Network</h2>
-                            <h2>Easy Payments</h2>
-                            <h2>Daily Updates</h2>
-                        </div>
-                    </div>
-
-                    <div class="bullets">
-                        <span class="active" data-value="1"></span>
-                        <span data-value="2"></span>
-                        <span data-value="3"></span>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
