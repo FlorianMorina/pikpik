@@ -24,9 +24,21 @@ function showSlides() {
 }
 
 function validateForm() {
-    let x = document.forms["myForm"]["fname"].value;
-    if (x == "") {
-      alert("Name must be filled out");
-      return false;
+    let name = document.forms["myForm"]["fname"].value;
+    if (!name.match(/^[A-Z][a-z]/)) {
+        alert("Name duhet te filloj me shkronje te madhe dhe duhet te kete vetem tekst.");
+        return false;
+    }
+
+    let email = document.forms["myForm"]["femail"].value;
+    if (!email.match(/^w+[._-]?\w+@[a-z]\.[a-z]{2,3}/)) {
+        alert("Email duhet te jete standart.");
+        return false;
+    }
+
+    let password = document.forms["myForm"]["fpassword"].value;
+    if (!password.match(/^[A-Z][a-z][0-9]{3}/)) {
+        alert("Password duhet te filloj me shkronje te madhe dhe duhet te perfundoj me 3 numra.");
+        return false;
     }
   }
