@@ -41,4 +41,4 @@ function validateForm() {
         alert("Password duhet te filloj me shkronje te madhe dhe duhet te perfundoj me 3 numra.");
         return false;
     }
-  }
+}
