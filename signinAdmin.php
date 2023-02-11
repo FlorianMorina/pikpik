@@ -1,9 +1,48 @@
+<?php
+session_start();
+
+if (isset($_POST['femail']) && isset($_POST['fpassword'])){
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "admins";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$email = mysqli_real_escape_string($conn, $_POST['femail']);
+$password = mysqli_real_escape_string($conn, $_POST['fpassword']);
+
+    // Write the query
+    $sql = "SELECT * FROM admins WHERE email = '$email' AND password = '$password'";
+    
+    // Run the query and store the result
+    $result = $conn->query($sql);
+    
+    // If there's a match, sign in the user
+    if ($result->num_rows > 0) {
+        session_start();
+        $_SESSION['femail'] = $email;
+        header("Location: adminPanel.php");
+        exit();
+    } else {
+        // If there's no match, show an error message
+        echo "Incorrect email or password. If you are not an admin please Sign Up as a User";
+    }
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=width-device, initial-scale=1.0">
-    <title>Sign In | pikpik</title>
+    <title>Sign In Admin | pikpik</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +53,7 @@
         <div class="box">
             <div class="inner-box">
                 <div class="forms-wrap">
-                    <form action="signIn.html" name="myForm" autocomplete="off" class="sign-in-form">
+                    <form action="<?=$_SERVER['PHP_SELF']?>" name="myForm" method="post" autocomplete="off" class="sign-in-form">
                         <div class="logo">
                             <a href="#"><img src="images/logo/black-logo.png" alt="logo"></a>
                         </div>
@@ -22,16 +61,16 @@
                         <div class="heading">
                             <h2>Welcome in Admin Panel</h2>
                             <h6>Not Registred?</h6>
-                            <a href="signUpAdmin.html" class="toggle">Sign Up</a>
+                            <a href="signUpAdmin.php" class="toggle">Sign Up</a>
                         </div>
 
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <input name="fname" type="text"
+                                <input name="femail" type="text"
                                 minlength="4"
                                 class="input-field"
                                 autocomplete="off"
-                                placeholder="Enter your Name"
+                                placeholder="Enter your Email"
                                 required>
                             </div>
                             <div class="input-wrap">
@@ -46,12 +85,12 @@
                             <br> <br>
                             <div class="heading">
                                 <h6>Are you User?</h6>
-                                <a href="signin.html" class="toggle">Sign In</a>
+                                <a href="signIn.php" class="toggle">Sign In</a>
                             </div>
                         </div>
                     </form>
 
-                    <form action="signIn.html" autocomplete="off" class="sign-up-form">
+                    <form action="signIn.php" autocomplete="off" class="sign-up-form">
                         <div class="logo">
                             <img src="images/logo/black-logo.png" alt="logo">
                         </div>

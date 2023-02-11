@@ -28,7 +28,7 @@ $password = mysqli_real_escape_string($conn, $_POST['fpassword']);
     if ($result->num_rows > 0) {
         session_start();
         $_SESSION['femail'] = $email;
-        header("Location: index.html");
+        header("Location: index.php");
         exit();
     } else {
         // If there's no match, show an error message
@@ -61,16 +61,16 @@ $password = mysqli_real_escape_string($conn, $_POST['fpassword']);
                         <div class="heading">
                             <h2>Welcome Back</h2>
                             <h6>Not Registred?</h6>
-                            <a href="signUp.html" class="toggle">Sign Up</a>
+                            <a href="signUp.php" class="toggle">Sign Up</a>
                         </div>
 
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <input name="fname" type="text"
+                                <input name="femail" type="text"
                                 minlength="4"
                                 class="input-field"
                                 autocomplete="off"
-                                placeholder="Enter your Name"
+                                placeholder="Enter your Email"
                                 required>
                             </div>
                             <div class="input-wrap">
@@ -85,13 +85,13 @@ $password = mysqli_real_escape_string($conn, $_POST['fpassword']);
                             <br> <br>
                             <div class="heading">
                                 <h6>Are you Admin?</h6>
-                                <a href="signinAdmin.html" class="toggle">Sign In</a>
+                                <a href="signinAdmin.php" class="toggle">Sign In</a>
                             </div>
                             
                         </div>
                     </form>
 
-                    <form action="signIn.html" autocomplete="off" class="sign-up-form">
+                    <form action="signIn.php" autocomplete="off" class="sign-up-form">
                         <div class="logo">
                             <img src="images/logo/black-logo.png" alt="logo">
                         </div>

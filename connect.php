@@ -35,7 +35,7 @@ if($conn->connect_error){
     <body>
     <li>
         <p>Order completed</p>
-        <a href="index.html">Bact to main page</a>
+        <a href="index.php">Bact to main page</a>
     </li> 
     </body>
     </html>

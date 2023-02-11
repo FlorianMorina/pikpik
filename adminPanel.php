@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['femail'])) {
+  // If the admin is not logged in, redirect to the signin page
+  header("Location: signinAdmin.php");
+  exit;
+
+  // Check if the username starts with "ramazan" or "florian"
+if (substr($_SESSION['femail'], 0, 7) != "ramazan" && substr($_SESSION['femail'], 0, 7) != "florian") {
+    // If the username does not start with "ramazan" or "florian", show an error message
+    echo "You are not authorized to access this page";
+    exit;
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,6 +26,6 @@
         <link rel="stylesheet" href="styles.css">
     </head>
 <body>
-    
+    <p>Hello Admin</p>
 </body>
 </html>

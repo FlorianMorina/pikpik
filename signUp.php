@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
     // Run the query
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
-        header('location: index.html');
+        header('location: index.php');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
                         <div class="heading">
                             <h2>Get Started</h2>
                             <h6>Alredy Have An Account?</h6>
-                            <a href="signIn.html" class="toggle">Sign In</a>
+                            <a href="signIn.php" class="toggle">Sign In</a>
                         </div>
 
                         <div class="actual-form">
@@ -82,16 +82,16 @@ if (isset($_POST['submit'])) {
                                 required>
                                 <!-- <label>Password</label> -->
                             </div>
-                            <input class="btn green" type="submit" value="Submit" style="border: transparent; font-weight: 600;">
+                            <input class="btn green" name="submit" type="submit" value="Submit" style="border: transparent; font-weight: 600;">
                             <br> <br>
                             <div class="heading">
                                 <h6>Are you Admin?</h6>
-                                <a href="signinAdmin.html" class="toggle">Sign In</a>
+                                <a href="signinAdmin.php" class="toggle">Sign In</a>
                             </div>
                         </div>
                     </form>
 
-                    <form action="signIn.html" autocomplete="off" class="sign-up-form">
+                    <form action="signIn.php" autocomplete="off" class="sign-up-form">
                         <div class="logo">
                             <img src="images/logo/black-logo.png" alt="logo">
                         </div>

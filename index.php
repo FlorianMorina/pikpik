@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['femail'])) {
+  // If the user is not logged in, redirect to the signin page
+  header("Location: signIn.php");
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -33,7 +42,7 @@
                         </li>
 
                         <li>
-                            <a href="signIn.php" class="btn green">Log Out</a>
+                            <a href="logout.php" class="btn green">Log Out</a>
                         </li>
                     </ul>
                 </nav>
@@ -67,7 +76,7 @@
                         </li>
 
                         <li>
-                            <a href="signIn.html" class="btn green" style="color: white;">Sign In</a>
+                            <a href="signIn.php" class="btn green" style="color: white;">Sign In</a>
                         </li>
                     </ul>
                 </div>
@@ -343,11 +352,11 @@
 
                         <ul>
                             <li>
-                                <a href="signIn.html">Sign In</a>
+                                <a href="signIn.php">Sign In</a>
                             </li>
 
                             <li>
-                                <a href="signUp.html">Register</a>
+                                <a href="signUp.php">Register</a>
                             </li>
                         </ul>
                     </div>

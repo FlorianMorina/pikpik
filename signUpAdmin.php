@@ -1,9 +1,41 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "admins";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if the form is submitted
+if (isset($_POST['submit'])) {
+    $name = $_POST['fname'];
+    $email = $_POST['femail'];
+    $password = $_POST['fpassword'];
+    
+    // Write the query
+    $sql = "INSERT INTO admins (name, email, password) VALUES ('$name', '$email', '$password')";
+    
+    // Run the query
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+        header('location: index.php');
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=width-device, initial-scale=1.0">
-    <title>Sign In | pikpik</title>
+    <title>Sign Up Admin | pikpik</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +46,7 @@
         <div class="box">
             <div class="inner-box">
                 <div class="forms-wrap">
-                    <form action="signIn.html" name="myForm" autocomplete="off" class="sign-in-form">
+                    <form action="<?=$_SERVER['PHP_SELF']?>" method="post" name="myForm" autocomplete="off" class="sign-in-form">
                         <div class="logo">
                             <a href="#"><img src="images/logo/black-logo.png" alt="logo"></a>
                         </div>
@@ -22,7 +54,7 @@
                         <div class="heading">
                             <h2>Get Started</h2>
                             <h6>Alredy Have An Account?</h6>
-                            <a href="signinAdmin.html" class="toggle">Sign In</a>
+                            <a href="signinAdmin.php" class="toggle">Sign In</a>
                         </div>
 
                         <div class="actual-form">
@@ -50,16 +82,16 @@
                                 required>
                                 <!-- <label>Password</label> -->
                             </div>
-                            <input class="btn blue" type="submit" value="Submit" style="border: transparent; font-weight: 600;">
+                            <input class="btn blue" name="submit" type="submit" value="Submit" style="border: transparent; font-weight: 600;">
                             <br> <br>
                             <div class="heading">
                                 <h6>Are you User?</h6>
-                                <a href="signin.html" class="toggle">Sign In</a>
+                                <a href="signIn.php" class="toggle">Sign In</a>
                             </div>
                         </div>
                     </form>
 
-                    <form action="signIn.html" autocomplete="off" class="sign-up-form">
+                    <form action="signIn.php" autocomplete="off" class="sign-up-form">
                         <div class="logo">
                             <img src="images/logo/black-logo.png" alt="logo">
                         </div>
