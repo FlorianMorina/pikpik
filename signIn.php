@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+if (isset($_POST['femail']) && isset($_POST['fpassword'])){
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -12,12 +15,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$email = mysqli_real_escape_string($conn, $_POST['femail']);
+$password = mysqli_real_escape_string($conn, $_POST['fpassword']);
 
-// Check if the form is submitted
-if (isset($_POST['submit'])) {
-    $email = $_POST['femail'];
-    $password = $_POST['fpassword'];
-    
     // Write the query
     $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
     
@@ -32,8 +32,9 @@ if (isset($_POST['submit'])) {
         exit();
     } else {
         // If there's no match, show an error message
-        echo "Incorrect email or password. If you are not a user Sign Up";
+        echo "Incorrect email or password. If you are not a user please Sign Up";
     }
+
 }
 ?>
 <!DOCTYPE html>
