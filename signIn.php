@@ -1,3 +1,41 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "user";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+
+// Check if the form is submitted
+if (isset($_POST['submit'])) {
+    $email = $_POST['femail'];
+    $password = $_POST['fpassword'];
+    
+    // Write the query
+    $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
+    
+    // Run the query and store the result
+    $result = $conn->query($sql);
+    
+    // If there's a match, sign in the user
+    if ($result->num_rows > 0) {
+        session_start();
+        $_SESSION['femail'] = $email;
+        header("Location: index.html");
+        exit();
+    } else {
+        // If there's no match, show an error message
+        echo "Incorrect email or password. If you are not a user Sign Up";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,28 +52,21 @@
         <div class="box">
             <div class="inner-box">
                 <div class="forms-wrap">
-                    <form action="signIn.html" name="myForm" autocomplete="off" class="sign-in-form">
+                    <form action="<?=$_SERVER['PHP_SELF']?>" name="myForm" method="post" autocomplete="off" class="sign-in-form">
                         <div class="logo">
                             <a href="index.html"><img src="images/logo/black-logo.png" alt="logo"></a>
                         </div>
 
                         <div class="heading">
-                            <h2>Get Started</h2>
-                            <h6>Alredy Have An Account?</h6>
-                            <a href="signIn.html" class="toggle">Sign In</a>
+                            <h2>Welcome Back</h2>
+                            <h6>Not Registred?</h6>
+                            <a href="signUp.php" class="toggle">Sign Up</a>
                         </div>
 
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <input name="fname" type="text"
+                                <input name="femail" type="text"
                                 minlength="4"
-                                class="input-field"
-                                autocomplete="off"
-                                placeholder="Enter your Name"
-                                required>
-                            </div>
-                            <div class="input-wrap">
-                                <input name="femail" type="email"
                                 class="input-field"
                                 autocomplete="off"
                                 placeholder="Enter your Email"
@@ -48,9 +79,8 @@
                                 autocomplete="off"
                                 placeholder="Enter your Password"
                                 required>
-                                <!-- <label>Password</label> -->
                             </div>
-                            <input class="btn green" type="submit" value="Submit" style="border: transparent; font-weight: 600;">
+                            <input class="btn green" name="submit" type="submit" value="Submit" style="border: transparent; font-weight: 600;">
                             <p class="text">Forgot Password? 
                             <a href="#">Get Help</a> Signing In</p>
                         </div>
@@ -66,7 +96,6 @@
                             <h6>Alredy Have An Account?</h6>
                             <a href="#" class="toggle">Sign In</a>
                         </div>
-
                     </form>
                 </div>
 
