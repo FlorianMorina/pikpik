@@ -54,23 +54,23 @@ $password = mysqli_real_escape_string($conn, $_POST['fpassword']);
             <div class="inner-box">
                 <div class="forms-wrap">
                     <form action="<?=$_SERVER['PHP_SELF']?>" name="myForm" method="post" autocomplete="off" class="sign-in-form">
-                        <div class="logo">
-                            <a href="index.html"><img src="images/logo/black-logo.png" alt="logo"></a>
+                    <div class="logo">
+                            <a href="#"><img src="images/logo/black-logo.png" alt="logo"></a>
                         </div>
 
                         <div class="heading">
                             <h2>Welcome Back</h2>
                             <h6>Not Registred?</h6>
-                            <a href="signUp.php" class="toggle">Sign Up</a>
+                            <a href="signUp.html" class="toggle">Sign Up</a>
                         </div>
 
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <input name="femail" type="text"
+                                <input name="fname" type="text"
                                 minlength="4"
                                 class="input-field"
                                 autocomplete="off"
-                                placeholder="Enter your Email"
+                                placeholder="Enter your Name"
                                 required>
                             </div>
                             <div class="input-wrap">
@@ -81,9 +81,13 @@ $password = mysqli_real_escape_string($conn, $_POST['fpassword']);
                                 placeholder="Enter your Password"
                                 required>
                             </div>
-                            <input class="btn green" name="submit" type="submit" value="Submit" style="border: transparent; font-weight: 600;">
-                            <p class="text">Forgot Password? 
-                            <a href="#">Get Help</a> Signing In</p>
+                            <input class="btn green" type="submit" value="Submit" style="border: transparent; font-weight: 600;">
+                            <br> <br>
+                            <div class="heading">
+                                <h6>Are you Admin?</h6>
+                                <a href="signinAdmin.html" class="toggle">Sign In</a>
+                            </div>
+                            
                         </div>
                     </form>
 
@@ -99,7 +103,6 @@ $password = mysqli_real_escape_string($conn, $_POST['fpassword']);
                         </div>
                     </form>
                 </div>
-
                 <div class="carousel">
                     <div class="mySlides fade">
                       <img src="images/signIn_register/img1.png" class="image img-1 show" alt="">

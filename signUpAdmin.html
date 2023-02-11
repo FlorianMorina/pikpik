@@ -1,60 +1,28 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "user";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Check if the form is submitted
-if (isset($_POST['submit'])) {
-    $name = $_POST['fname'];
-    $email = $_POST['femail'];
-    $password = $_POST['fpassword'];
-    
-    // Write the query
-    $sql = "INSERT INTO user (name, email, password) VALUES ('$name', '$email', '$password')";
-    
-    // Run the query
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-        header('location: index.html');
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=width-device, initial-scale=1.0">
-    <title>Sign Up | pikpik</title>
+    <title>Sign In | pikpik</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="signIn-wrapper">
+    <div class="signIn-wrapper" style="background-color: #D1E6F3;">
         <div class="box">
             <div class="inner-box">
                 <div class="forms-wrap">
-                    <form action="<?=$_SERVER['PHP_SELF']?>" method="post" name="myForm" autocomplete="off" class="sign-in-form">
-                    <div class="logo">
+                    <form action="signIn.html" name="myForm" autocomplete="off" class="sign-in-form">
+                        <div class="logo">
                             <a href="#"><img src="images/logo/black-logo.png" alt="logo"></a>
                         </div>
 
                         <div class="heading">
                             <h2>Get Started</h2>
                             <h6>Alredy Have An Account?</h6>
-                            <a href="signIn.html" class="toggle">Sign In</a>
+                            <a href="signinAdmin.html" class="toggle">Sign In</a>
                         </div>
 
                         <div class="actual-form">
@@ -82,11 +50,11 @@ if (isset($_POST['submit'])) {
                                 required>
                                 <!-- <label>Password</label> -->
                             </div>
-                            <input class="btn green" type="submit" value="Submit" style="border: transparent; font-weight: 600;">
+                            <input class="btn blue" type="submit" value="Submit" style="border: transparent; font-weight: 600;">
                             <br> <br>
                             <div class="heading">
-                                <h6>Are you Admin?</h6>
-                                <a href="signinAdmin.html" class="toggle">Sign In</a>
+                                <h6>Are you User?</h6>
+                                <a href="signin.html" class="toggle">Sign In</a>
                             </div>
                         </div>
                     </form>
