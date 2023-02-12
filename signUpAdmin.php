@@ -13,22 +13,27 @@ if ($conn->connect_error) {
 }
 
 // Check if the form is submitted
-if (isset($_POST['submit'])) {
-    $name = $_POST['fname'];
-    $email = $_POST['femail'];
-    $password = $_POST['fpassword'];
+    if (isset($_POST['submit'])) {
+        $name = $_POST['fname'];
+        $email = $_POST['femail'];
+        $password = $_POST['fpassword'];
     
-    // Write the query
-    $sql = "INSERT INTO admins (name, email, password) VALUES ('$name', '$email', '$password')";
-    
-    // Run the query
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-        header('location: index.php');
+        if (substr($email, -9) === 'admin.com'){
+        // Write the query
+        $sql = "INSERT INTO admins (name, email, password) VALUES ('$name', '$email', '$password')";
+        
+        // Run the query
+        if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+            header('location: index.php');
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Email must end with admin.com";
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

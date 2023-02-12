@@ -36,11 +36,23 @@
 
                         <div class="actual-form" >
                            
-                                <br><input class="input-field" type="text" name="name" placeholder="Enter your name..." required> <br><br>
-                                <input class="input-field" type="text" name="items" placeholder="Choose the items..." required> <br><br>
-                                <input class="input-field" type="text" name="date" placeholder="Enter the delivery date..." required> <br><br>
-                                <input class="input-field" type="text" name="phone" placeholder="Enter you phone number..." required> <br><br>
-                                <input class="input-field" type="text" name="location" placeholder="Enter your location..." required> <br><br>
+                                <br><input class="input-field" type="text" name="name" placeholder="Enter your name..." required> <br>
+                                <!-- <input class="input-field" type="text" name="items" placeholder="Choose the items..." required> <br> -->
+                                <select class="input-field" name="items">
+                                    <option value="" placeholder="Choose">Choose an item...</option>
+                                    <option value="Hamburger">Hamburger | $2.50</option>
+                                    <option value="Meet">Meet | $2.50</option>
+                                    <option value="Noodle">Noodle | $2.50</option>
+                                    <option value="Rice">Rice | $2.50</option>
+                                    <option value="Salat">Salat | $2.50</option>
+                                    <option value="Grill">Grill | $2.50</option>
+                                    <option value="Soymilk">Soymilk | $2.50</option>
+                                    <option value="Orange">Orange | $2.50</option>
+                                </select>
+
+                                <input class="input-field" type="date" name="date" placeholder="Enter the delivery date..." required> <br>
+                                <input class="input-field" type="text" name="phone" placeholder="Enter you phone number..." required> <br>
+                                <input class="input-field" type="text" name="location" placeholder="Enter your location..." required> <br>
                               
                         
                                 <input class="btn green" style="border: transparent; font-weight: 600;" type="submit" name="orderBtn" value="Complete Order">
