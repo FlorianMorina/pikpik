@@ -303,13 +303,13 @@ if (!isset($_SESSION['femail'])) {
         <section class="newsletter-section">
             <div class="wrapper">
                 <h2>
-                    Add a Review! <br>
-                    Your feedback is appreciated
+                    Your feedback is appreciated!
                 </h2>
 
                 <form action="#">
-                    <input id="message" type="text" placeholder="Enter your message">
-                    <button id="subscribe-button1" class="subscribe-button">Subscribe</button>
+                    <!-- <input id="message" type="text" placeholder="Enter your message"> -->
+                    <!-- <button id="subscribe-button1" class="subscribe-button">Subscribe</button> -->
+                    <a href="submitReview.php" class="btn green">Write a Review</a>
                 </form>
             </div>
         </section>

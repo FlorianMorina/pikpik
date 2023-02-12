@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="heading">
-                            <h2>Scroll down for the List of Users</h2>
+                            <h2>Scroll down for the List of Reviews</h2>
                             <h6>Do you want to go back to </h6>
                             <a href="logout.php" class="toggle">Log Out?</a>
                         </div>
@@ -53,10 +53,10 @@
                                 <a href="adminPanel.php" class="btn blue">Go Back To Admin Panel</a>
                              </div>
                             <div class="input-wrap">
-                              <a href="ordersDatabase.php" class="btn blue">Go To Orders List</a>
+                              <a href="usersDatabase.php" class="btn blue">Go To Users List</a>
                             </div>
                             <div class="input-wrap">
-                              <a href="reviewDatabase.php" class="btn blue">Go To Reviews List</a>
+                              <a href="ordersDatabase.php" class="btn blue">Go To Orders List</a>
                             </div>
                             <!-- <div class="heading">
                                 <h6>Are you User?</h6>
@@ -68,7 +68,7 @@
 
                 <div class="carousel">
                     <div class="mySlides fade" style="background-color: #1982C4;">
-                      <img src="images/signIn_register/userList.png" class="image img-1 show" alt="">
+                      <img src="images/signIn_register/reviewList.png" class="image img-1 show" alt="">
                     </div>
                 </div>
             </div>
@@ -77,53 +77,58 @@
     <script src="main.js"></script>
     <section class="menu-section" id="menu-section">
         <div class="wrapper">
-            <h6 style="color:#1982C4;">Users Database</h6>
-            <h2>Manage and Delete your Users</h2>
+            <h6 style="color:#1982C4;">Orders Database</h6>
+            <h2>Manage and Delete the Orders</h2>
         </div>
       <div style="margin-left:10%; margin-right:10%;">
       <?php
-      // Connect to the database and retrieve users
-      $host = "localhost";
-      $username = "root";
-      $password = "";
-      $dbname = "user";
+        // Connect to the database
+        $host = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "reviews";
 
-      $conn = mysqli_connect($host, $username, $password, $dbname);
+        $conn = mysqli_connect($host, $username, $password, $dbname);
 
-      if (!$conn) {
+        if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
-      }
-
-      $sql = "SELECT * FROM user";
-      $result = mysqli_query($conn, $sql);
-
-      if (mysqli_num_rows($result) > 0) {
-        // Display the users in a table
-        echo "<table>";
-        echo "<tr>";
-        echo "<th>ID</th>";
-        echo "<th>Name</th>";
-        echo "<th>Email</th>";
-        echo "<th>Password</th>";
-        echo "</tr>";
-
-        while ($row = mysqli_fetch_assoc($result)) {
-          echo "<tr>";
-          echo "<td>" . $row["id"] . "</td>";
-          echo "<td>" . $row["name"] . "</td>";
-          echo "<td>" . $row["email"] . "</td>";
-          echo "<td>" . $row["password"] . "</td>";
-          echo "<td><a href='deleteUser.php?delete_id=" . $row['id'] . "'>Delete</a></td>";
-          echo "</tr>";
         }
 
-        echo "</table>";
-      } else {
-        echo "No users found in the database";
-      }
+        // Query to retrieve all reviews from the database
+        $sql = "SELECT * FROM reviews";
+        $result = mysqli_query($conn, $sql);
 
-      mysqli_close($conn);
+        // Check if the query was successful
+        if (mysqli_num_rows($result) > 0) {
+        // If the query was successful, loop through the results and display them
+        echo "<table>";
+        echo "<tr>";
+        echo "<th>Review_Id</th>";
+        echo "<th>User_Id</th>";
+        echo "<th>Email</th>";
+        echo "<th>Review</th>";
+        echo "</tr>";
+        
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>" . $row["id"] . "</td>";
+            echo "<td>" . $row["user_id"] . "</td>";
+            echo "<td>" . $row["email"] . "</td>";
+            echo "<td>" . $row["review"] . "</td>";
+            echo "<td><a href='deleteReview.php?delete_id=" . $row['id'] . "'>Delete</a></td>";
+            echo "</tr>";
+        }
+        
+        echo "</table>";
+        } else {
+        // If the query was not successful, show an error message
+        echo "No reviews found in the database";
+        }
+
+        // Close the database connection
+        mysqli_close($conn);
     ?>
+
       </div>
 
         <div class="wrapper">

@@ -97,10 +97,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <input class="btn green" style="border: transparent; font-weight: 600;" type="submit" value="Submit">
                                 
                                 <p>
-                                  <a href="index.php" style="color: #CCCCCC;">Return to home page</a>  
-                                </p>
-                                  
-                                
+                                  <a href="index.php" style="color: #CCCCCC; font-size:14px;">Return to home page</a>  
+                                </p>  
                         </div>
                     </form>
                 </div>

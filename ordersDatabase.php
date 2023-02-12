@@ -54,7 +54,10 @@
                                 <a href="adminPanel.php" class="btn blue">Go Back To Admin Panel</a>
                              </div>
                             <div class="input-wrap">
-                            <a href="usersDatabase.php" class="btn blue">Go To Users List</a>
+                              <a href="usersDatabase.php" class="btn blue">Go To Users List</a>
+                            </div>
+                            <div class="input-wrap">
+                              <a href="reviewDatabase.php" class="btn blue">Go To Reviews List</a>
                             </div>
                             <!-- <div class="heading">
                                 <h6>Are you User?</h6>

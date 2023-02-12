@@ -66,7 +66,7 @@ $password = mysqli_real_escape_string($conn, $_POST['fpassword']);
 
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <input name="femail" type="text"
+                                <input name="femail" type="email"
                                 minlength="4"
                                 class="input-field"
                                 autocomplete="off"

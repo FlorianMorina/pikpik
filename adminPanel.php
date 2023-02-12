@@ -38,8 +38,8 @@ if (substr($_SESSION['femail'], 0, 7) != "ramazan" && substr($_SESSION['femail']
 
                         <div class="heading">
                             <h2>Welcome in Admin Panel</h2>
-                            <h6>Do you want to go back to Sign In?</h6>
-                            <a href="logout.php" class="toggle">Log Out</a>
+                            <h6>Do you want to go back to </h6>
+                            <a href="logout.php" class="toggle">Log Out?</a>
                         </div>
 
                         <div class="actual-form">
@@ -48,6 +48,9 @@ if (substr($_SESSION['femail'], 0, 7) != "ramazan" && substr($_SESSION['femail']
                             </div>
                             <div class="input-wrap">
                                 <button class="btn blue" style="border: transparent; font-weight: 600;" type="button" onclick="location.href='ordersDatabase.php'">Go To Orders List</button>
+                            </div>
+                            <div class="input-wrap">
+                                <button class="btn blue" style="border: transparent; font-weight: 600;" type="button" onclick="location.href='reviewDatabase.php'">Go To Reviews List</button>
                             </div>
                             <!-- <div class="heading">
                                 <h6>Are you User?</h6>
