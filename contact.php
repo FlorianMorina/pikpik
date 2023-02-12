@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-<form action="contact.php" method="post">
+<!-- <form action="contact.php" method="post">
   <label for="name">Name:</label>
   <input type="text" id="name" name="name"><br><br>
   
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <a href="index.html">Return to home page</a>
   </li>
 
-</form>
+</form> -->
 
   <div class="signIn-wrapper">
         <div class="box">
@@ -79,25 +79,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <a href="#"><img src="images/logo/black-logo.png" alt="logo"></a>
                         </div>
 
-                        <div class="heading">
-                            <h2>Order your food</h2>
+                        <div class="heading" style="margin-top: 10%;">
+                            <h2>Contact Us!</h2>
                         </div>
 
                         <div class="actual-form">
                       
-                                <label for="name">Name:</label>
-                                <input class="input-field" type="text" id="name" name="name"><br><br>
+                                <label for="name"></label>
+                                <input class="input-field" type="text" id="name" name="name" placeholder="Enter your name"><br><br>
                                 
-                                <label for="email">Email:</label>
-                                <input class="input-field" type="email" id="email" name="email"><br><br>
+                                <label for="email"></label>
+                                <input class="input-field" type="email" id="email" name="email" placeholder="Enter your email"><br><br>
                                 
-                                <label for="message">Message:</label>
-                                <textarea class="input-field" id="message" name="message"></textarea><br><br>
+                                <label for="message"></label>
+                                <textarea class="input-field" id="message" name="message" placeholder="Enter your message" style="height: 100px;"></textarea><br><br>
                                 
-                                <input class="btn blue" style="border: transparent; font-weight: 600;" type="submit" value="Submit">
-                                <li>
-                                  <a href="index.html">Return to home page</a>
-                                </li>
+                                <input class="btn green" style="border: transparent; font-weight: 600;" type="submit" value="Submit">
+                                
+                                <p>
+                                  <a href="index.php" style="color: #CCCCCC;">Return to home page</a>  
+                                </p>
+                                  
+                                
                         </div>
                     </form>
                 </div>

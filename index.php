@@ -38,6 +38,10 @@ if (!isset($_SESSION['femail'])) {
                         </li>
 
                         <li>
+                            <a href="contact.php">Contact Us</a>
+                        </li>
+
+                        <li>
                             <a href="order.html"><img class="shop-icon" src="images/icon/shop-icon.png" alt="shop-icon"></a>
                         </li>
 
@@ -180,7 +184,7 @@ if (!isset($_SESSION['femail'])) {
                                 <h3>Hamburger</h3>
                                 <p>140g</p>
                                 <h3 class="price">$2.50</h3>
-                                <a href="#" class="btn white green add">Add To Card</a>
+                                <a href="order.html" class="btn white green add">Order Now</a>
                             </div>
                         </div>
     
@@ -190,7 +194,7 @@ if (!isset($_SESSION['femail'])) {
                                 <h3>Meet</h3>
                                 <p>200g</p>
                                 <h3 class="price">$2.50</h3>
-                                <a href="#" class="btn white green add">Add To Card</a>
+                                <a href="order.html" class="btn white green add">Order Now</a>
                             </div>
                         </div>
     
@@ -200,7 +204,7 @@ if (!isset($_SESSION['femail'])) {
                                 <h3>Noodle</h3>
                                 <p>100g</p>
                                 <h3 class="price">$2.50</h3>
-                                <a href="#" class="btn white green add">Add To Card</a>
+                                <a href="order.html" class="btn white green add">Order Now</a>
                             </div>
                         </div>
     
@@ -210,7 +214,7 @@ if (!isset($_SESSION['femail'])) {
                                 <h3>Rice</h3>
                                 <p>150g</p>
                                 <h3 class="price">$2.50</h3>
-                                <a href="#" class="btn white green add">Add To Card</a>
+                                <a href="order.html" class="btn white green add">Order Now</a>
                             </div>
                         </div>
     
@@ -220,7 +224,7 @@ if (!isset($_SESSION['femail'])) {
                                 <h3>Salat</h3>
                                 <p>120g</p>
                                 <h3 class="price">$2.50</h3>
-                                <a href="#" class="btn white green add">Add To Card</a>
+                                <a href="order.html" class="btn white green add">Order Now</a>
                             </div>
                         </div>
     
@@ -230,7 +234,7 @@ if (!isset($_SESSION['femail'])) {
                                 <h3>Grill</h3>
                                 <p>200g</p>
                                 <h3 class="price">$2.50</h3>
-                                <a href="#" class="btn white green add">Add To Card</a>
+                                <a href="order.html" class="btn white green add">Order Now</a>
                             </div>
                         </div>
     
@@ -240,7 +244,7 @@ if (!isset($_SESSION['femail'])) {
                                 <h3>Soymilk</h3>
                                 <p>150g</p>
                                 <h3 class="price">$2.50</h3>
-                                <a href="#" class="btn white green add">Add To Card</a>
+                                <a href="order.html" class="btn white green add">Order Now</a>
                             </div>
                         </div>
     
@@ -250,7 +254,7 @@ if (!isset($_SESSION['femail'])) {
                                 <h3>Orange</h3>
                                 <p>100g</p>
                                 <h3 class="price">$2.50</h3>
-                                <a href="#" class="btn white green add">Add To Card</a>
+                                <a href="order.html" class="btn white green add">Order Now</a>
                             </div>
                         </div>
                 </div>
@@ -299,8 +303,8 @@ if (!isset($_SESSION['femail'])) {
         <section class="newsletter-section">
             <div class="wrapper">
                 <h2>
-                    Subscribe Newsletter & 
-                    Get Letest News
+                    Add a Review! <br>
+                    Your feedback is appreciated
                 </h2>
 
                 <form action="#">
@@ -311,7 +315,7 @@ if (!isset($_SESSION['femail'])) {
         </section>
 
 
-        <!-- End of newsletter section -->
+        <!-- End of Review section -->
 
         <footer>
             <div class="wrapper">

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form action="connect.php" method="post">
+    <!-- <form action="connect.php" method="post">
         <input type="text" name="name" placeholder="name..."> <br><br>
         <input type="text" name="items" placeholder="items..."> <br><br>
         <input type="text" name="date" placeholder="date..."> <br><br>
@@ -19,7 +19,7 @@
       
 
         <input type="submit" name="orderBtn" value="order"> <br><br>
-    </form>
+    </form> -->
 
     <div class="signIn-wrapper">
         <div class="box">
@@ -27,7 +27,7 @@
                 <div class="forms-wrap" style="width: 100%;">
                     <form action="connect.php" method="post" name="myForm" class="sign-in-form">
                         <div class="logo">
-                            <a href="#"><img src="images/logo/black-logo.png" alt="logo"></a>
+                            <a href="index.php"><img src="images/logo/black-logo.png" alt="logo"></a>
                         </div>
 
                         <div class="heading">
@@ -36,14 +36,14 @@
 
                         <div class="actual-form">
                            
-                                <input class="input-field" type="text" name="name" placeholder="Name..."> <br><br>
-                                <input class="input-field" type="text" name="items" placeholder="Items..."> <br><br>
-                                <input class="input-field" type="text" name="date" placeholder="Date..."> <br><br>
-                                <input class="input-field" type="text" name="phone" placeholder="Phone..."> <br><br>
-                                <input class="input-field" type="text" name="location" placeholder="Location..."> <br><br>
+                                <input class="input-field" type="text" name="name" placeholder="Enter your name..." required> <br><br>
+                                <input class="input-field" type="text" name="items" placeholder="Choose the items..." required> <br><br>
+                                <input class="input-field" type="text" name="date" placeholder="Enter the delivery date..." required> <br><br>
+                                <input class="input-field" type="text" name="phone" placeholder="Enter you phone number..." required> <br><br>
+                                <input class="input-field" type="text" name="location" placeholder="Enter your location..." required> <br><br>
                               
                         
-                                <input class="btn green" style="border: transparent; font-weight: 600;" type="submit" name="orderBtn" value="Order"> <br><br>
+                                <input class="btn green" style="border: transparent; font-weight: 600;" type="submit" name="orderBtn" value="Complete Order"> <br><br>
    
                         </div>
                     </form>
@@ -51,5 +51,125 @@
             </div>
         </div>
     </div>
+
+    <section class="menu-section" id="menu-section">
+        <div class="wrapper">
+            <h6>Your Menu</h6>
+            <h2>Menu That Always Makes You To Fall In Love</h2>
+
+            <!-- <div class="filter-businesses">
+                <ul>
+                    <li class="filter">
+                        <a href="#" class="btn white black"><img src="images/icon/filter-icon.png" alt="filter">Filter</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="btn white black"><img src="images/icon/business-icon.png" alt="business-logo">Business Name</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn white black"><img src="images/icon/business-icon.png" alt="business-logo">Business Name</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn white black"><img src="images/icon/business-icon.png" alt="business-logo">Business Name</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn white black"><img src="images/icon/business-icon.png" alt="business-logo">Business Name</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn white black"><img src="images/icon/business-icon.png" alt="business-logo">Business Name</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn white black"><img src="images/icon/business-icon.png" alt="business-logo">Business Name</a>
+                    </li>
+                </ul>
+            </div> -->
+            <div class="food-cards">
+
+                    <div class="food-card">
+                        <img src="images/icon/hambuger.png" alt="hamburger">
+                        <div class="info">
+                            <h3>Hamburger</h3>
+                            <p>140g</p>
+                            <h3 class="price">$2.50</h3>
+                            <a href="order.html" class="btn white green add">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <img src="images/3d/icon/meet.png" alt="meet">
+                        <div class="info">
+                            <h3>Meet</h3>
+                            <p>200g</p>
+                            <h3 class="price">$2.50</h3>
+                            <a href="order.html" class="btn white green add">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <img src="images/3d/icon/noodle.png" alt="noodle">
+                        <div class="info">
+                            <h3>Noodle</h3>
+                            <p>100g</p>
+                            <h3 class="price">$2.50</h3>
+                            <a href="order.html" class="btn white green add">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <img src="images/3d/icon/rice.png" alt="rice">
+                        <div class="info">
+                            <h3>Rice</h3>
+                            <p>150g</p>
+                            <h3 class="price">$2.50</h3>
+                            <a href="order.html" class="btn white green add">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <img src="images/3d/icon/salat.png" alt="Salat">
+                        <div class="info">
+                            <h3>Salat</h3>
+                            <p>120g</p>
+                            <h3 class="price">$2.50</h3>
+                            <a href="order.html" class="btn white green add">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <img src="images/3d/icon/grill.png" alt="grill">
+                        <div class="info">
+                            <h3>Grill</h3>
+                            <p>200g</p>
+                            <h3 class="price">$2.50</h3>
+                            <a href="order.html" class="btn white green add">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <img src="images/3d/icon/soymilk.png" alt="soymilk">
+                        <div class="info">
+                            <h3>Soymilk</h3>
+                            <p>150g</p>
+                            <h3 class="price">$2.50</h3>
+                            <a href="order.html" class="btn white green add">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <img src="images/3d/icon/6.png" alt="orange">
+                        <div class="info">
+                            <h3>Orange</h3>
+                            <p>100g</p>
+                            <h3 class="price">$2.50</h3>
+                            <a href="order.html" class="btn white green add">Order Now</a>
+                        </div>
+                    </div>
+            </div>
+            <!-- <div class="show-more">
+                <a href="#" class="btn white green">Show More</a>
+            </div> -->
+        </div>
+    </section>
+
 </body>
 </html>

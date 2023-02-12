@@ -59,7 +59,7 @@ $password = mysqli_real_escape_string($conn, $_POST['fpassword']);
                         </div>
 
                         <div class="heading">
-                            <h2>Welcome in Admin Panel</h2>
+                            <h2>Welcome...</h2>
                             <h6>Not Registred?</h6>
                             <a href="signUpAdmin.php" class="toggle">Sign Up</a>
                         </div>
@@ -104,16 +104,16 @@ $password = mysqli_real_escape_string($conn, $_POST['fpassword']);
                 </div>
 
                 <div class="carousel">
-                    <div class="mySlides fade">
-                      <img src="images/signIn_register/img1.png" class="image img-1 show" alt="">
+                    <div class="mySlides fade" style="background-color: #E8F3F9;">
+                      <img src="images/signIn_register/img1 Admin.png" class="image img-1 show" alt="">
                     </div>
-                    <div class="mySlides fade">
-                      <img src="images/signIn_register/img2.png" class="image img-2" alt="">
+                    <div class="mySlides fade" style="background-color: #E8F3F9;">
+                      <img src="images/signIn_register/img2 Admin.png" class="image img-2" alt="">
                     </div>
-                    <div class="mySlides fade">
-                      <img src="images/signIn_register/img3.png" class="image img-3" alt="">
+                    <div class="mySlides fade" style="background-color: #E8F3F9;">
+                      <img src="images/signIn_register/img3 Admin.png" class="image img-3" alt="">
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
     </div>

@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
 
                         <div class="heading">
                             <h2>Get Started</h2>
-                            <h6>Alredy Have An Account?</h6>
+                            <h6>Alredy have an Account?</h6>
                             <a href="signIn.php" class="toggle">Sign In</a>
                         </div>
 
