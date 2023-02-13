@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email = $_POST["email"];
   $message = $_POST["message"];
   
-  $to = "rm57460@ubt-uni.net"; // Replace with your email address
+  $to = ""; // Replace with your email address
   $subject = "Contact Request from $name";
   
   $mail = new PHPMailer(true);
@@ -21,8 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com'; // Replace with your SMTP server hostname
     $mail->SMTPAuth = true;
-    $mail->Username = 'rm57460@ubt-uni.net'; // Replace with your SMTP username
-    $mail->Password = 'ugmwdeyhzixdgper'; // Replace with your SMTP password
+    $mail->Username = ''; // Replace with your SMTP username
+    $mail->Password = ''; // Replace with your SMTP password
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
     
